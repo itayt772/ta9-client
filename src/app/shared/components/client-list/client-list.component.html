@@ -1,0 +1,15 @@
+<div *ngFor="let client of clients; trackBy: trackByFn" class="client-card">
+  <h2
+    class="card-title"
+    [ngClass]="client.Connected ? 'connected' : 'disconnected'"
+  >
+    {{ client.ClientDetails.Ip }}
+  </h2>
+  <div class="card-body">
+    <div class="card-text"><span>OS:</span>Windows 10</div>
+    <div class="card-text"><span>Local Time:</span>2:03 pm</div>
+    <div class="card-text"><span>Time Zone:</span>-3 Hours</div>
+    <div class="card-text"><span>Browser:</span>Chrome</div>
+    <div class="card-text"><span>Resolution:</span>1920 X 1080</div>
+  </div>
+</div>
