@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { BehaviorSubject } from "rxjs";
 import { Client } from "../models";
 
+import { environment } from "../../../environments/environment";
 import { UtilsService } from "./utils.service";
 
 declare var $: any;
@@ -25,7 +26,7 @@ export class ClientsService {
 
   private initializeSignalRConnection(): void {
     // get from configs, also remove to signalrService
-    let signalRServerEndPoint = "http://localhost:3344";
+    let signalRServerEndPoint = environment.signalRServerEndPoint;
     this.connection = $.hubConnection(signalRServerEndPoint);
     this.proxy = this.connection.createHubProxy("clientDetails");
 
